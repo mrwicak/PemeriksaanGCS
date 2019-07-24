@@ -1,12 +1,11 @@
 package yunatan.iko.com.example.pemeriksaangcs;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
-import android.view.View;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
     RadioGroup rg1, rg2, rg3;
@@ -45,6 +44,7 @@ public class MainActivity extends AppCompatActivity {
         rbM6 = findViewById(R.id.rb_motorik6);
 
         tvM = findViewById(R.id.tv_M);
+        tvT = findViewById(R.id.tv_t);
 
         rg1.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
@@ -52,15 +52,20 @@ public class MainActivity extends AppCompatActivity {
                 if (rbE1.isChecked()) {
                     skor1 = 4;
                     tampilkanSkor(skor1);
+                    tampilkanTotal(skor1 + skor2 + skor3);
+
                 } else if (rbE2.isChecked()) {
                     skor1 = 3;
                     tampilkanSkor(skor1);
+                    tampilkanTotal(skor1 + skor2 + skor3);
                 } else if (rbE3.isChecked()) {
                     skor1 = 2;
                     tampilkanSkor(skor1);
+                    tampilkanTotal(skor1 + skor2 + skor3);
                 } else if (rbE4.isChecked()) {
                     skor1 = 1;
                     tampilkanSkor(skor1);
+                    tampilkanTotal(skor1 + skor2 + skor3);
                 }
             }
 
@@ -71,18 +76,23 @@ public class MainActivity extends AppCompatActivity {
                 if (rbV1.isChecked()) {
                     skor2 = 5;
                     tampilkanSkor2(skor2);
+                    tampilkanTotal(skor1 + skor2 + skor3);
                 } else if (rbV2.isChecked()) {
                     skor2 = 4;
                     tampilkanSkor2(skor2);
+                    tampilkanTotal(skor1 + skor2 + skor3);
                 } else if (rbV3.isChecked()) {
                     skor2 = 3;
                     tampilkanSkor2(skor2);
+                    tampilkanTotal(skor1 + skor2 + skor3);
                 } else if (rbV4.isChecked()) {
                     skor2 = 2;
                     tampilkanSkor2(skor2);
+                    tampilkanTotal(skor1 + skor2 + skor3);
                 } else if (rbV5.isChecked()) {
                     skor2 = 1;
                     tampilkanSkor2(skor2);
+                    tampilkanTotal(skor1 + skor2 + skor3);
                 }
             }
 
@@ -93,21 +103,27 @@ public class MainActivity extends AppCompatActivity {
                 if (rbM1.isChecked()) {
                     skor3 = 6;
                     tampilkanSkor3(skor3);
+                    tampilkanTotal(skor1 + skor2 + skor3);
                 } else if (rbM2.isChecked()) {
                     skor3 = 5;
                     tampilkanSkor3(skor3);
+                    tampilkanTotal(skor1 + skor2 + skor3);
                 } else if (rbM3.isChecked()) {
                     skor3 = 4;
                     tampilkanSkor3(skor3);
+                    tampilkanTotal(skor1 + skor2 + skor3);
                 } else if (rbM4.isChecked()) {
                     skor3 = 3;
                     tampilkanSkor3(skor3);
+                    tampilkanTotal(skor1 + skor2 + skor3);
                 } else if (rbM5.isChecked()) {
                     skor3 = 2;
                     tampilkanSkor3(skor3);
+                    tampilkanTotal(skor1 + skor2 + skor3);
                 } else if (rbM6.isChecked()) {
                     skor3 = 1;
                     tampilkanSkor3(skor3);
+                    tampilkanTotal(skor1 + skor2 + skor3);
                 }
 
             }
@@ -126,6 +142,10 @@ public class MainActivity extends AppCompatActivity {
 
     public void tampilkanSkor3(int skor3) {
         tvM.setText("M:" + skor3);
+    }
+
+    public void tampilkanTotal(int skorTot) {
+        tvT.setText("Total:" + skorTot);
     }
 }
 
